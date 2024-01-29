@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <script>
 var win;
-win = window.open(location.href.replace("https://experiments.cti.repl.co/keepopen/open.html?l=",""))
+var uri1 = new URLSearchParams(window.location.search).get("l");
+win = window.open(uri1)
 function o() {
   if (win.closed) {
-    win = window.open(location.href.replace("https://experiments.cti.repl.co/keepopen/open.html?l=",""))
+    win = window.open(uri1)
   }
 }
 seInterval(o,1)
